@@ -1,0 +1,57 @@
+<section>
+    <h1 style="text-align: center; font-size: 35px;">Categories</h1>
+    <div class="categories">
+        <button (click)="getAllProducts()" class="catbut">All</button>
+        @for (item of categories; track $index) {
+            <button (click)="changeCategory(item.id)" class="catbut">{{item.name}}</button>
+        }
+  </div>
+  <hr style="background-color: red; height: 3px; width: 100%;margin-bottom: 20px;">
+
+</section>
+<main>
+  <div class="filter">
+    <div class="spc">
+        <label for="">Spiciness: </label>
+        <input type="range" min="-1" max="4" [defaultValue]="-1" [(ngModel)]="spiciness">
+        <div style="display: flex; justify-content: end; margin-right: 5px; gap: 25px; align-items: start;" class="values">
+          <p style="font-size: 22px; height: 0;">0</p>
+          <p style="font-size: 22px; height: 0;">1</p>
+          <p style="font-size: 22px; height: 0;">2</p>
+          <p style="font-size: 22px; height: 0;">3</p>
+          <p style="font-size: 22px; height: 0;">4</p>
+        </div>
+    </div>
+    <div class="area">
+        <input type="checkbox" [(ngModel)]="nuts">
+        <label for="">No Nuts</label>
+    </div>
+    <div class="area">
+        <input type="checkbox" [(ngModel)]="vegeterian">
+        <label for="">Vegeterian</label>
+    </div>
+    <button type="reset">RESET</button>
+    <button (click)="customFilter()">APPLY FILTER</button>
+  </div>
+  
+  
+  <div class="productList">
+      @for (item of foodList; track $index) {
+        <div class="card">
+          <img class="surati" src="{{item.image}}" alt="">
+          <h1 class="title">{{item.name}}</h1>
+          <p class="spiciness">Spiciness: {{item.spiciness}}</p>
+          <div class="inputs">
+            <input [checked]="item.nuts ? 'true' : ''" disabled type="checkbox">
+            <label class="label" for="">Nuts</label>
+            <input [checked]="item.vegeterian ? 'true' : ''" disabled type="checkbox">
+            <label class="label" for="">Vegeterian</label>
+          </div>
+          <div class="end">
+            <h1 class="fasi">$ {{item.price}}</h1>
+            <button (click)="addToCart(item)" class="add">Add to cart</button>
+          </div>
+        </div>
+      }
+    </div>
+</main>

@@ -1,0 +1,21 @@
+<div class="productList">
+    @for (item of products; track $index) {
+      <div class="card">
+          <div class="cardtop">
+            <img style="width: 213px; height: 183px;" [src]="item.image" class="card-img-top" alt="...">
+          </div>
+        <div class="cardbottom">
+          <h1 class="cardname">{{item.name}}</h1>
+          <p class="spice">Spiciness: {{item.spiciness}}</p>
+          <div class="checkboxes">
+            <input class="nutcheck" type="checkbox">Nuts
+            <input class="vegcheck" type="checkbox">Vegetarian
+          </div>
+          <div class="priceadd">
+            <p class="price">${{item.price}}</p>
+            <button class="add">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>

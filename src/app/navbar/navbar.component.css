@@ -1,0 +1,42 @@
+.tavuri{
+    display: flex;
+    flex-direction: column;
+    gap: 125px;
+    background-image: url(https://restaurant.stepprojects.ge/images/inner_banner.jpg);
+    height: 385px;
+    color: white;
+}
+.tavurierti{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 25px;
+    gap: 100px;
+}
+.tavuriori{
+    display: flex;
+    justify-content: center;
+}
+.tavuriright{
+    display: flex;
+    gap: 100px;
+}
+.tavurihome, .tavuricart{
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    transition: 0.4s;
+}
+.tavurihome:hover{
+    color: yellow;
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.tavuricart:hover{
+    color: yellow;
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: underline;
+}

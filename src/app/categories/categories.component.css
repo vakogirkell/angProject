@@ -1,0 +1,21 @@
+.catbut{
+    width: auto;
+    height: 70px;
+    padding-inline: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    border: 1px solid transparent;
+    transition: 0.7s;
+    cursor: pointer;
+}
+.catbut:hover{
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+    transition: 0.7s;
+}
+.categories{
+    display: flex;
+    justify-content: center;
+}
