@@ -25,4 +25,13 @@ export class ApiService {
   damateba(body: any) {
     return this.http.post("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", body)
   }
+  getAllBaskets() {
+    return this.http.get("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+  }
+  updateCart( body:any ) {
+    return this.http.put("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", body)
+  }
+  deleteItem(id:any) {
+    return this.http.delete(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`)
+  }
 }

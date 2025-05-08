@@ -16,6 +16,7 @@
 .tavuriori{
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 .tavuriright{
     display: flex;
@@ -39,4 +40,16 @@
     transition: 0.4s;
     cursor: pointer;
     text-decoration: underline;
+}
+#bars{
+    display: none;
+}
+@media (max-width: 850px){
+    #bars{
+        display: inline;
+        font-size: 30px;
+    }
+    .tavurihome, .tavuricart{
+        display: none;
+    }
 }

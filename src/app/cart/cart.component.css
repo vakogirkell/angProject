@@ -1,0 +1,34 @@
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+    
+}
+
+table button {
+    padding: 10px 15px;
+}
+@media (max-width: 565px) {
+    .gasauqmebeli{
+        display: none;
+    }
+}
+@media (max-width: 510px) {
+    .aviatori{
+        width: 5px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .marwyvebi{
+        display: flex;
+        height: 75px;
+        align-items: center;
+    }
+}

@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th colspan="2">Product</th>
+            <th>Quantity</th>
+            <th class="gasauqmebeli">Price</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of cartData; track $index) {
+            <tr>
+                <td ><img width="35" [src]="item.product.image" alt=""></td>
+                <td>{{item.product.name}}</td>
+                <td class="marwyvebi"><button class="aviatori" (click)="increase(item)">+</button> {{item.quantity}} <button class="aviatori" [disabled]="item.quantity == 1" (click)="decrease(item)">-</button></td>
+                <td class="gasauqmebeli">{{item.product.price}}</td>
+                <td>{{item.product.price * item.quantity}}</td>
+                <td><button (click)="removeItem(item.product.id)">X</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h1 style="display: flex; justify-content: end;">Total : <span style="color: red;">${{total}}</span></h1>
