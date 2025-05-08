@@ -18,6 +18,10 @@
     display: flex;
     justify-content: center;
 }
+.active{
+    background-color: red;
+    color: white;
+}
 .card{
     display: flex;
     flex-direction: column;

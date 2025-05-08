@@ -19,11 +19,12 @@ constructor(public service: ApiService){
   public veg: any
 
 
-  public spiciness: string = ""
+  public spiciness: string = "-1"
   public nuts: string = ""
   public vegeterian: string = ""
   public categories: any
   public foodList:any
+  public activeCategory: number = 0
 
   getAllCategories() {
     this.service.getCategories().subscribe({
@@ -37,6 +38,7 @@ constructor(public service: ApiService){
     })
   }
   changeCategory(id:number) {
+    this.activeCategory = id
     this.service.filterByCategory(id).subscribe((data : any) =>{
       this.foodList = data.products
     })
@@ -54,6 +56,7 @@ constructor(public service: ApiService){
   }
 
 getAllProducts() {
+  this.activeCategory = 0
   this.service.getProducts().subscribe({
     next: (data: any) => {
       console.log(data);
@@ -82,4 +85,15 @@ customFilter() {
     }
   } )
 }
+
+reset(){
+  this.nuts = ''
+  this.vegeterian = ''
+  this.spiciness = '-1'
+  this.getAllProducts()
+}
+
+
+
+
 }

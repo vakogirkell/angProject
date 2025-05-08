@@ -1,9 +1,9 @@
 <section>
     <h1 style="text-align: center; font-size: 35px;">Categories</h1>
     <div class="categories">
-        <button (click)="getAllProducts()" class="catbut">All</button>
+        <button [class.active]="activeCategory == 0" (click)="getAllProducts()" class="catbut">All</button>
         @for (item of categories; track $index) {
-            <button (click)="changeCategory(item.id)" class="catbut">{{item.name}}</button>
+            <button [class.active]="item.id == activeCategory" (click)="changeCategory(item.id)" class="catbut">{{item.name}}</button>
         }
   </div>
   <hr style="background-color: red; height: 3px; width: 100%;margin-bottom: 20px;">
@@ -30,7 +30,7 @@
         <input type="checkbox" [(ngModel)]="vegeterian">
         <label for="">Vegeterian</label>
     </div>
-    <button type="reset">RESET</button>
+    <button (click)="reset()">RESET</button>
     <button (click)="customFilter()">APPLY FILTER</button>
   </div>
   
