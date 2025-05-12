@@ -75,14 +75,20 @@ getAllProducts() {
 }
 
 customFilter() {
+  let spc;
+  if(this.spiciness == '-1') {
+    spc = ''
+  } else {
+    spc = this.spiciness
+  }
   console.log(this.spiciness);
   console.log(this.nuts);
   console.log(this.vegeterian);
-  this.service.customFilter(this.spiciness, this.nuts, this.vegeterian).subscribe( (data:any) => {
+  this.service.customFilter(spc, this.nuts, this.vegeterian).subscribe( (data:any) => {
     this.foodList = data
-    if (this.spiciness == '-1') {
-      return this.getAllProducts()
-    }
+    // if (this.spiciness == '-1') {
+    //   return this.getAllProducts()
+    // }
   } )
 }
 
