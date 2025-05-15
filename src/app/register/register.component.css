@@ -1,0 +1,41 @@
+form {
+    width: 600px;
+    box-shadow: 0 0 15px 2px black;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+    margin: 50px auto;
+}
+
+.mainArea {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left, .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, button {
+    width: 100%;
+    height: 35px;
+}
+@media (max-width:670px) {
+    .mainArea{
+        flex-direction: column;
+        align-items: center;
+    }
+    form{
+        width: auto;
+        padding: auto;
+        margin: auto;
+    }
+    button{
+        width: auto;
+    }
+}

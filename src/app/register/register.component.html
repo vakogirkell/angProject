@@ -1,1 +1,26 @@
-<p>register works!</p>
+<form [formGroup]="formArea" (ngSubmit)="register()">
+    <div class="mainArea">
+        <div class="left">
+            <input type="text" placeholder="firstName" formControlName="firstName" />
+            <input type="text" placeholder="lastName" formControlName="lastName" />
+            <input type="text" placeholder="age" formControlName="age" />
+            <input type="text" placeholder="email" formControlName="email" />
+            <input type="text" placeholder="password" formControlName="password" />
+          </div>
+          <div class="right">
+            <input type="text" placeholder="address" formControlName="address" />
+            <input type="text" placeholder="phone" formControlName="phone" />
+            <input type="text" placeholder="zipcode" formControlName="zipcode" />
+            <input type="text" placeholder="avatar" formControlName="avatar" />
+            <select formControlName="gender">
+              <option value="">Choose your Gender</option>
+              <option value="MALE">Male</option>
+              <option value="FEMALE">Female</option>
+              <option value="OTHER">Other</option>
+            </select>
+          </div>
+    </div>
+ 
+
+  <button type="submit">REGISTER</button>
+</form>

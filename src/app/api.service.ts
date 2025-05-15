@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class ApiService {
 
 
-  constructor(public http: HttpClient) { }
+  constructor(private http :HttpClient, public cookie: CookieService ) { }
   
   getProducts() {
    return this.http.get("https://restaurant.stepprojects.ge/api/Products/GetAll")
@@ -33,5 +34,14 @@ export class ApiService {
   }
   deleteItem(id:any) {
     return this.http.delete(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`)
+  }
+    signUp(body:any) {
+    return this.http.post("https://api.everrest.educata.dev/auth/sign_up", body)
+  }
+  signIn(body:any) {
+    return this.http.post("https://api.everrest.educata.dev/auth/sign_in", body)
+  }
+  getUser() {
+    return this.http.get("https://api.everrest.educata.dev/auth", {headers: {"Authorization": `Bearer ${this.cookie.get("user")}`}})
   }
 }
