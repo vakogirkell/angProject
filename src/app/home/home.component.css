@@ -110,4 +110,5 @@ main{
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 30px;
 }
